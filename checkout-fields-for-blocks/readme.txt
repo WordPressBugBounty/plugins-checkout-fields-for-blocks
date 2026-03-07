@@ -5,7 +5,7 @@ Tags: woocommerce checkout blocks, checkout block, edit woocommerce blocks, bloc
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -211,6 +211,9 @@ Please report security bugs found in the source code of the Checkout Fields for 
 Upgrade to the latest version to get the newest features and all interface improvements.
 
 == Changelog ==
+
+= 1.2.2 - 2026-03-07 =
+* Added support for WooCommerce 10.6
 
 = 1.2.1 - 2026-02-03 =
 * Readme update
