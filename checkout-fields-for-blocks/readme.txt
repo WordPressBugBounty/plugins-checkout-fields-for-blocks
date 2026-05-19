@@ -3,9 +3,9 @@ Contributors: wpdesk, amisiewicz
 Donate link: https://www.wpdesk.net/sk/checkout-fields-for-blocks-donate/
 Tags: woocommerce checkout blocks, checkout block, edit woocommerce blocks, blocks, checkout blocks
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -211,6 +211,9 @@ Please report security bugs found in the source code of the Checkout Fields for 
 Upgrade to the latest version to get the newest features and all interface improvements.
 
 == Changelog ==
+
+= 1.2.4 - 2026-05-19 =
+* Added support for WooCommerce 10.8
 
 = 1.2.3 - 2026-05-14 =
 * Added support for WordPress 7.0
