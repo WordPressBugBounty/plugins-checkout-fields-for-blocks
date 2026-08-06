@@ -57,10 +57,23 @@ abstract class AbstractBlock implements IntegrationInterface {
 	}
 
 	protected function register_block_editor_script(): void {
-		$this->register_block_script( 'index' );
+		$script_handle = $this->register_block_script( 'index' );
+
+		\wp_localize_script(
+			$script_handle,
+			'cffbTeaser',
+			[
+				'conditionalLogicUrl' => get_locale() === 'pl_PL'
+					? 'https://www.wpdesk.pl/sklep/logika-warunkowa-woocommerce-checkout-fields/'
+					: 'https://wpdesk.net/products/woocommerce-conditional-checkout-fields/',
+				'pricingUrl'          => get_locale() === 'pl_PL'
+					? 'https://www.wpdesk.pl/sklep/checkout-fields-for-blocks-ceny-pol/'
+					: 'https://wpdesk.net/products/checkout-fields-for-blocks-field-pricing/',
+			]
+		);
 	}
 
-	protected function register_block_script( string $script_name ): void {
+	protected function register_block_script( string $script_name ): string {
 		$script_asset_path = $this->plugin_dir . '/' . $this->block_relative_path . '/' . $script_name . '.asset.php';
 
 		$script_asset = file_exists( $script_asset_path )
@@ -70,12 +83,22 @@ abstract class AbstractBlock implements IntegrationInterface {
 				'version'      => '1.0.0',
 			];
 
+		$script_handle = $this->get_name() . '-' . $script_name;
+
 		\wp_register_script(
-			$this->get_name() . '-' . $script_name,
+			$script_handle,
 			\plugins_url( $this->block_relative_path . '/' . $script_name . '.js', $this->plugin_dir . '/checkout-fields-for-blocks.php' ),
 			$script_asset['dependencies'],
 			$script_asset['version'],
 			true
 		);
+
+		\wp_set_script_translations(
+			$script_handle,
+			'checkout-fields-for-blocks',
+			$this->plugin_dir . '/lang/'
+		);
+
+		return $script_handle;
 	}
 }

@@ -1,6 +1,8 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, Button } from '@wordpress/components';
 
+const teaserData = window.cffbTeaser || {};
+
 export const ConditionalLogicTeaser = () => {
 	return (
 		<PanelBody
@@ -15,12 +17,12 @@ export const ConditionalLogicTeaser = () => {
 			</p>
 			<Button
 				isPrimary
-				href="https://your-plugin-website.com/pro"
+				href={ teaserData.conditionalLogicUrl }
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				{ __(
-					'Upgrade to PRO to Unlock',
+					'Buy Conditional Logic add-on',
 					'checkout-fields-for-blocks'
 				) }
 			</Button>

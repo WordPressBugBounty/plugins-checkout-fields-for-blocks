@@ -2,36 +2,37 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Checkout Fields for Blocks 1.2.5\n"
+"Project-Id-Version: Checkout Fields for Blocks 1.2.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/checkout-fields-for-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-21T02:19:52+00:00\n"
+"POT-Creation-Date: 2026-08-06T11:11:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: checkout-fields-for-blocks\n"
 
 #. Plugin Name of the plugin
 #. Description of the plugin
-#: checkout-fields-for-blocks.php
+#: checkout-fields-for-blocks.php:3
+#: checkout-fields-for-blocks.php:5
 msgid "Checkout Fields for Blocks"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: checkout-fields-for-blocks.php
+#: checkout-fields-for-blocks.php:4
 msgid "https://www.wpdesk.net/sk/checkout-fields-for-blocks-plugin/"
 msgstr ""
 
 #. Author of the plugin
-#: checkout-fields-for-blocks.php
+#: checkout-fields-for-blocks.php:7
 msgid "WP Desk"
 msgstr ""
 
 #. Author URI of the plugin
-#: checkout-fields-for-blocks.php
+#: checkout-fields-for-blocks.php:8
 msgid "https://www.wpdesk.net/sk/checkout-fields-for-blocks-author/"
 msgstr ""
 
@@ -557,7 +558,7 @@ msgstr ""
 #: build/js/blocks/input-url-block/index.js:1
 #: build/js/blocks/select-block/index.js:1
 #: build/js/blocks/textarea-block/index.js:1
-#: src/js/components/panels/ConditionalLogicTeaser.js:7
+#: src/js/components/panels/ConditionalLogicTeaser.js:9
 msgid "Conditional Logic (Pro)"
 msgstr ""
 
@@ -568,7 +569,7 @@ msgstr ""
 #: build/js/blocks/input-url-block/index.js:1
 #: build/js/blocks/select-block/index.js:1
 #: build/js/blocks/textarea-block/index.js:1
-#: src/js/components/panels/ConditionalLogicTeaser.js:11
+#: src/js/components/panels/ConditionalLogicTeaser.js:13
 msgid "Display this field only when specific conditions are met."
 msgstr ""
 
@@ -579,8 +580,8 @@ msgstr ""
 #: build/js/blocks/input-url-block/index.js:1
 #: build/js/blocks/select-block/index.js:1
 #: build/js/blocks/textarea-block/index.js:1
-#: src/js/components/panels/ConditionalLogicTeaser.js:22
-msgid "Upgrade to PRO to Unlock"
+#: src/js/components/panels/ConditionalLogicTeaser.js:24
+msgid "Buy Conditional Logic add-on"
 msgstr ""
 
 #: build/js/blocks/checkbox-block/index.js:1
@@ -590,7 +591,7 @@ msgstr ""
 #: build/js/blocks/input-url-block/index.js:1
 #: build/js/blocks/select-block/index.js:1
 #: build/js/blocks/textarea-block/index.js:1
-#: src/js/components/panels/PricingTeaser.js:7
+#: src/js/components/panels/PricingTeaser.js:9
 msgid "Pricing Settings (Pro)"
 msgstr ""
 
@@ -601,7 +602,7 @@ msgstr ""
 #: build/js/blocks/input-url-block/index.js:1
 #: build/js/blocks/select-block/index.js:1
 #: build/js/blocks/textarea-block/index.js:1
-#: src/js/components/panels/PricingTeaser.js:11
+#: src/js/components/panels/PricingTeaser.js:13
 msgid "Add pricing rules to this field."
 msgstr ""
 
@@ -612,8 +613,8 @@ msgstr ""
 #: build/js/blocks/input-url-block/index.js:1
 #: build/js/blocks/select-block/index.js:1
 #: build/js/blocks/textarea-block/index.js:1
-#: src/js/components/panels/PricingTeaser.js:22
-msgid "Upgrade to PRICING to Unlock"
+#: src/js/components/panels/PricingTeaser.js:24
+msgid "Buy Pricing add-on"
 msgstr ""
 
 #: build/js/blocks/checkbox-block/index.js:1

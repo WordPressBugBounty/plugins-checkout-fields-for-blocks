@@ -47,7 +47,7 @@
 		"phpunit/phpunit": "^9",
 		"wpdesk/phpstan-rules": "*",
 		"wpdesk/wp-builder": "^2.0.0",
-		"wpdesk/wp-codeception": "^2.12",
+		"wpdesk/wp-codeception": "^3",
 		"wpdesk/wp-plugin-flow-free": "^1.0.2",
 		"wpdesk/wp-wpdesk-composer": "^3.0"
 	},
@@ -79,6 +79,6 @@
 			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
 		}
 	},
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"type": "wordpress-plugin"
 }

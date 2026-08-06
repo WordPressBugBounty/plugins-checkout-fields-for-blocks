@@ -1,6 +1,8 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, Button } from '@wordpress/components';
 
+const teaserData = window.cffbTeaser || {};
+
 export const PricingTeaser = () => {
 	return (
 		<PanelBody
@@ -15,12 +17,12 @@ export const PricingTeaser = () => {
 			</p>
 			<Button
 				isPrimary
-				href="https://your-plugin-website.com/pricing"
+				href={ teaserData.pricingUrl }
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				{ __(
-					'Upgrade to PRICING to Unlock',
+					'Buy Pricing add-on',
 					'checkout-fields-for-blocks'
 				) }
 			</Button>

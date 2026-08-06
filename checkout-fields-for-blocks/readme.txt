@@ -1,11 +1,11 @@
 === Checkout Fields for Blocks ===
 Contributors: wpdesk, amisiewicz
 Donate link: https://www.wpdesk.net/sk/checkout-fields-for-blocks-donate/
-Tags: woocommerce checkout blocks, checkout block, edit woocommerce blocks, blocks, checkout blocks
+Tags: checkout plugin, checkout customization, form builder, checkout fields, checkout editor
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -211,6 +211,10 @@ Please report security bugs found in the source code of the Checkout Fields for 
 Upgrade to the latest version to get the newest features and all interface improvements.
 
 == Changelog ==
+
+= 1.2.6 - 2026-08-05 =
+* Added support for WooCommerce 11.0
+* Fixed translations
 
 = 1.2.5 - 2026-06-21 =
 * Added support for WooCommerce 10.9
