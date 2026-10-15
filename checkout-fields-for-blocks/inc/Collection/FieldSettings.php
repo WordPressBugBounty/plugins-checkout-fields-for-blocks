@@ -21,6 +21,7 @@ class FieldSettings {
 	private const PRICING_ENABLED     = 'enabled';
 	private const PRICING             = 'pricing';
 	private const PRICING_OPTIONS     = 'optionsPricing';
+	private const BLOCK_NAME          = 'blockName';
 
 	/**
 	 * @var array<string, mixed>
@@ -50,8 +51,22 @@ class FieldSettings {
 		return $this->data[ self::META_NAME ] ?? '';
 	}
 
+	public function get_block_name(): string {
+		return $this->data[ self::BLOCK_NAME ] ?? '';
+	}
+
 	public function get_label(): string {
 		return $this->data[ self::LABEL ] ?? '';
+	}
+
+	/**
+	 * Gets an arbitrary block attribute for an extension-owned field setting.
+	 *
+	 * @param mixed $default
+	 * @return mixed
+	 */
+	public function get_attribute( string $key, $default = null ) {
+		return $this->data[ $key ] ?? $default;
 	}
 
 	public function get_default_value(): string {
@@ -63,7 +78,10 @@ class FieldSettings {
 	}
 
 	public function is_required(): bool {
-		return $this->data[ self::REQUIRED ] ?? false;
+		return filter_var(
+			$this->data[ self::VALIDATION_SETTINGS ][ self::REQUIRED ]['enabled'] ?? false,
+			FILTER_VALIDATE_BOOLEAN
+		);
 	}
 
 	/**

@@ -108,5 +108,6 @@
       }
     }
   },
-  "textdomain": "checkout-fields-for-blocks"
+  "textdomain": "checkout-fields-for-blocks",
+  "style": "file:./style-index.css"
 }

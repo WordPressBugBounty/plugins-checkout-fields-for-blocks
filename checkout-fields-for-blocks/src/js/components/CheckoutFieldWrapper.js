@@ -40,6 +40,7 @@ const FieldStateEvaluator = ( {
 	fieldName,
 	setExtensionData,
 	metaName,
+	emptyValue = '',
 } ) => {
 	const useConditionalLogic = applyFilters(
 		'checkoutFields.hooks.useConditionalLogic',
@@ -77,9 +78,9 @@ const FieldStateEvaluator = ( {
 
 	useEffect( () => {
 		if ( ! isVisible ) {
-			setExtensionData( 'checkout-fields-for-blocks', metaName, '' );
+			setExtensionData( 'checkout-fields-for-blocks', metaName, emptyValue );
 		}
-	}, [ isVisible, setExtensionData, metaName ] );
+	}, [ isVisible, setExtensionData, metaName, emptyValue ] );
 
 	if ( ! isVisible ) {
 		return null; // Important: completely remove from DOM
@@ -102,6 +103,7 @@ export default function CheckoutFieldWrapper( {
 	fieldName,
 	setExtensionData,
 	metaName,
+	emptyValue,
 } ) {
 	const LogicContextProvider = applyFilters(
 		'checkoutFields.components.logicContextProvider',
@@ -116,6 +118,7 @@ export default function CheckoutFieldWrapper( {
 				fieldName={ fieldName }
 				setExtensionData={ setExtensionData }
 				metaName={ metaName }
+				emptyValue={ emptyValue }
 			>
 				{ children }
 			</FieldStateEvaluator>

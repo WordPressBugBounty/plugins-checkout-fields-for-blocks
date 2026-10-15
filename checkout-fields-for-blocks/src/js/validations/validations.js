@@ -1,17 +1,18 @@
 import { isEmail } from '@wordpress/url';
 import { __, sprintf } from '@wordpress/i18n';
 
+const isEmptyValue = ( value ) =>
+	Array.isArray( value ) ? value.length === 0 : ! value || value.trim() === '';
+
 export const validations = {
 	required: {
-		validate: ( value ) => {
-			if ( ! value || value.trim() === '' ) {
-				return __(
-					'This field is required.',
-					'checkout-fields-for-blocks'
-				);
-			}
-			return null;
-		},
+		validate: ( value ) =>
+			isEmptyValue( value )
+				? __(
+						'This field is required.',
+						'checkout-fields-for-blocks'
+				  )
+				: null,
 	},
 	email: {
 		validate: ( value ) => {

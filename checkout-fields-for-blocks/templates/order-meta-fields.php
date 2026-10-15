@@ -2,7 +2,7 @@
 /**
  * Template for displaying additional information in the order confirmation page.
  *
- * @var array<string, array{label: string, value: string}> $additional_fields
+ * @var array<string, array{label: string, kind: string, value: string, display: string}> $additional_fields
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php foreach ( $additional_fields as $field ) : ?>
 			<div class="cffb__list-node">
 				<span class="cffb__field-label"><?php echo esc_html( $field['label'] ); ?></span>:
-				<span class="cffb__field-value"><?php echo nl2br( esc_html( $field['value'] ) ); ?></span>
+				<span class="cffb__field-value">
+					<?php if ( $field['kind'] === \WPDesk\CBFields\Integration\DisplayValue::KIND_LINK ) : ?>
+						<a href="<?php echo esc_url( $field['value'] ); ?>"><?php echo esc_html( $field['display'] ); ?></a>
+					<?php else : ?>
+						<?php echo nl2br( esc_html( $field['value'] ) ); ?>
+					<?php endif; ?>
+				</span>
 			</div>
 		<?php endforeach; ?>
 	</div>

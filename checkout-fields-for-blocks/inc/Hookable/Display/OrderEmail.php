@@ -4,6 +4,7 @@ namespace WPDesk\CBFields\Hookable\Display;
 
 use WPDesk\CBFields\Data\FieldsMetaResolver;
 use CBFieldsVendor\WPDesk\PluginBuilder\Plugin\Hookable;
+use WPDesk\CBFields\Integration\DisplayValue;
 
 /**
  * Display fields on order email templates.
@@ -46,9 +47,13 @@ class OrderEmail implements Hookable {
 
 		$additional_fields = array_map(
 			function ( $field ) {
+				$value = $field['kind'] === DisplayValue::KIND_LINK
+					? sprintf( '<a href="%1$s">%2$s</a>', esc_url( $field['value'] ), esc_html( $field['display'] ) )
+					: nl2br( esc_html( $field['value'] ) );
+
 				return [
 					'label' => $field['label'],
-					'value' => '<br />' . nl2br( $field['value'] ),
+					'value' => '<br />' . $value,
 				];
 			},
 			$additional_fields

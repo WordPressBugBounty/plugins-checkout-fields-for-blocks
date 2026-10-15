@@ -2,8 +2,10 @@
 
 namespace WPDesk\CBFields\Hookable;
 
+use Automattic\WooCommerce\StoreApi\Exceptions\RouteException;
 use CBFieldsVendor\WPDesk\PluginBuilder\Plugin\Hookable;
 use WPDesk\CBFields\Collection\FieldSettingsCollectionFactory;
+use WPDesk\CBFields\Integration\FieldValueHandlerRegistry;
 
 /**
  * Saves custom checkout fields data to order meta.
@@ -20,9 +22,16 @@ class OrderSaver implements Hookable {
 	 */
 	private $settings_factory;
 
-	public function __construct( FieldSettingsCollectionFactory $settings_factory, string $plugin_namespace ) {
-		$this->settings_factory = $settings_factory;
-		$this->namespace        = $plugin_namespace;
+	private FieldValueHandlerRegistry $field_value_handler_registry;
+
+	public function __construct(
+		FieldSettingsCollectionFactory $settings_factory,
+		string $plugin_namespace,
+		FieldValueHandlerRegistry $field_value_handler_registry
+	) {
+		$this->settings_factory             = $settings_factory;
+		$this->namespace                    = $plugin_namespace;
+		$this->field_value_handler_registry = $field_value_handler_registry;
 	}
 
 	public function hooks() {
@@ -47,7 +56,11 @@ class OrderSaver implements Hookable {
 		}
 
 		$raw_extension_data = $request->get_param( 'extensions' )[ $this->namespace ];
-		$settings           = $this->settings_factory->get_collection();
+		if ( ! is_array( $raw_extension_data ) ) {
+			return;
+		}
+
+		$settings = $this->settings_factory->get_collection();
 
 		foreach ( $settings as $field_settings ) {
 			$meta_name = $field_settings->get_meta_name();
@@ -55,19 +68,22 @@ class OrderSaver implements Hookable {
 				continue;
 			}
 
-			$raw_value  = $raw_extension_data[ $meta_name ] ?? '';
 			$field_type = $field_settings->get_field_type();
-
-			switch ( $field_type ) {
-				case 'textarea':
-					$value = sanitize_textarea_field( $raw_value );
-					break;
-				default:
-					$value = sanitize_text_field( $raw_value );
-					break;
+			if ( ! $this->field_value_handler_registry->supports( $field_type, $field_settings->get_block_name() ) ) {
+				continue;
 			}
 
-			$order->update_meta_data( $meta_name, $value );
+			$handler        = $this->field_value_handler_registry->get( $field_type );
+			$raw_value      = $raw_extension_data[ $meta_name ] ?? $handler->empty_value();
+			$checkout_value = $handler->normalize( $raw_value, $field_settings );
+			$validation     = $handler->validate( $checkout_value, $field_settings );
+
+			if ( ! $validation->is_valid() ) {
+				throw new RouteException( $validation->get_error_code(), $validation->get_message(), 400 );
+			}
+
+			$order_value = $handler->prepare_order_value( $checkout_value, $field_settings, $order );
+			$order->update_meta_data( $meta_name, $order_value );
 		}
 
 		$order->save();

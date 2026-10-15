@@ -3,6 +3,7 @@
 	flex-direction: column;
 	position: relative;
 	margin-top: $gap;
+	margin-bottom: 16px;
 	white-space: nowrap;
 
 	textarea:focus {
@@ -24,5 +25,12 @@
 
 	label, p {
 		font-size: var(--wp--preset--font-size--small, 14px);
+	}
+
+	.help-text {
+		font-size: var(--wp--preset--font-size--small, 14px);
+		line-height: 1.4;
+		margin: 8px 0 0;
+		white-space: normal;
 	}
 }

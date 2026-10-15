@@ -8,7 +8,7 @@ use IteratorAggregate;
 /**
  * Collection of settings for all plugin fields.
  *
- * @implements IteratorAggregate<string, FieldSettings>
+ * @implements \IteratorAggregate<string, FieldSettings>
  */
 class FieldSettingsCollection implements IteratorAggregate {
 
@@ -38,7 +38,7 @@ class FieldSettingsCollection implements IteratorAggregate {
 	}
 
 	/**
-	 * @return Traversable<string, FieldSettings>
+	 * @return \Traversable<string, FieldSettings>
 	 */
 	public function getIterator(): Traversable {
 		foreach ( $this->raw_settings as $key => $raw_settings ) {
