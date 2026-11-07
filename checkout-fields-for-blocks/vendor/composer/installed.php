@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wpdesk/checkout-fields-for-blocks',
-        'pretty_version' => '1.3.0',
-        'version' => '1.3.0.0',
-        'reference' => '0d92e61e66840cc3b7c8cff81a739b5c16d58d08',
+        'pretty_version' => '1.3.1',
+        'version' => '1.3.1.0',
+        'reference' => '07f6508556a7483818e36a87cd76cd640e196869',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'wpdesk/checkout-fields-for-blocks' => array(
-            'pretty_version' => '1.3.0',
-            'version' => '1.3.0.0',
-            'reference' => '0d92e61e66840cc3b7c8cff81a739b5c16d58d08',
+            'pretty_version' => '1.3.1',
+            'version' => '1.3.1.0',
+            'reference' => '07f6508556a7483818e36a87cd76cd640e196869',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

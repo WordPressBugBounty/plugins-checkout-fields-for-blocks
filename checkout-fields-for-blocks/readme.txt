@@ -5,7 +5,7 @@ Tags: checkout plugin, checkout customization, form builder, checkout fields, ch
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -211,6 +211,9 @@ Please report security bugs found in the source code of the Checkout Fields for 
 Upgrade to the latest version to get the newest features and all interface improvements.
 
 == Changelog ==
+
+= 1.3.1 - 2026-11-07 =
+* Added support for WooCommerce 11.3
 
 = 1.3.0 - 2026-10-15 =
 * Added shared editor and checkout runtime boundaries for add-on integrations.
