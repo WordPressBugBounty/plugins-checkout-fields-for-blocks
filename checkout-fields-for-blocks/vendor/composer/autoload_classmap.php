@@ -304,6 +304,7 @@ return array(
     'WPDesk\\CBFields\\Exceptions\\FieldMetaException' => $baseDir . '/inc/Exceptions/FieldMetaException.php',
     'WPDesk\\CBFields\\Hookable\\Display\\DisplayBase' => $baseDir . '/inc/Hookable/Display/DisplayBase.php',
     'WPDesk\\CBFields\\Hookable\\Display\\OrderAdmin' => $baseDir . '/inc/Hookable/Display/OrderAdmin.php',
+    'WPDesk\\CBFields\\Hookable\\Display\\OrderAdminEditors' => $baseDir . '/inc/Hookable/Display/OrderAdminEditors.php',
     'WPDesk\\CBFields\\Hookable\\Display\\OrderConfirmation' => $baseDir . '/inc/Hookable/Display/OrderConfirmation.php',
     'WPDesk\\CBFields\\Hookable\\Display\\OrderEmail' => $baseDir . '/inc/Hookable/Display/OrderEmail.php',
     'WPDesk\\CBFields\\Hookable\\Display\\OrderMyAccount' => $baseDir . '/inc/Hookable/Display/OrderMyAccount.php',

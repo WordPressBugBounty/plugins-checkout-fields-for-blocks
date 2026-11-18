@@ -83,7 +83,8 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 		);
 		// Display.
 		$this->add_hookable( new Hookable\Display\OrderEmail( $field_meta_resolver ) );
-		$this->add_hookable( new Hookable\Display\OrderAdmin( $field_meta_resolver, $renderer ) );
+		( new Hookable\Display\OrderAdminEditors() )->register( $field_value_handler_registry );
+		$this->add_hookable( new Hookable\Display\OrderAdmin( $field_settings_collection_factory, $field_value_handler_registry, $renderer ) );
 		$this->add_hookable( new Hookable\Display\OrderConfirmation( $field_meta_resolver, $renderer ) );
 		$this->add_hookable( new Hookable\Display\OrderMyAccount( $field_meta_resolver, $renderer ) );
 		// Hook point for integrations.
@@ -116,7 +117,7 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 			return;
 		}
 
-		if ( $screen->post_type !== 'shop_order' ) {
+		if ( $screen->post_type !== 'shop_order' && $screen->id !== wc_get_page_screen_id( 'shop-order' ) ) {
 			return;
 		}
 
@@ -127,6 +128,20 @@ class Plugin extends AbstractPlugin implements LoggerAwareInterface, HookableCol
 			plugins_url( 'build/css/admin.css', $this->plugin_info->get_plugin_dir() . '/checkout-fields-for-blocks.php' ),
 			$asset_file['dependencies'],
 			$asset_file['version']
+		);
+		$asset_path   = $this->plugin_info->get_plugin_dir() . '/build/js/order-fields.asset.php';
+		$script_asset = file_exists( $asset_path )
+			? include $asset_path
+			: [
+				'dependencies' => [],
+				'version'      => $this->plugin_info->get_version(),
+			];
+		wp_enqueue_script(
+			'checkout-fields-for-blocks-order-admin',
+			plugins_url( 'build/js/order-fields.js', $this->plugin_info->get_plugin_dir() . '/checkout-fields-for-blocks.php' ),
+			$script_asset['dependencies'],
+			$script_asset['version'],
+			true
 		);
 	}
 

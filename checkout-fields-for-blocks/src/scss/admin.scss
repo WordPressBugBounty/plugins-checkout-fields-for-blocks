@@ -6,3 +6,94 @@
 		font-weight: 600;
 	}
 }
+
+.cffb-order-fields {
+	clear: both;
+	width: 100%;
+	margin-top: 1em;
+	padding-top: 1.25em;
+	border-top: 1px solid #dcdcde;
+
+	&__field,
+	&__readonly {
+		margin: 0 0 0.5em;
+		overflow-wrap: anywhere;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__view[hidden],
+	&__editor[hidden] {
+		display: none !important;
+	}
+
+	/* stylelint-disable-next-line selector-id-pattern -- Match WC rule. */
+	#order_data & > h3 {
+		margin: 0 0 12px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__toggle {
+		font-size: 13px;
+		font-weight: 400;
+	}
+
+	&__edit-field {
+		margin-bottom: 1em;
+
+		> strong {
+			display: block;
+			margin-bottom: 0.35em;
+		}
+	}
+
+	&__upload-file,
+	&__upload-choice {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.25em 1em;
+		margin: 0;
+	}
+
+	&__upload-file {
+		margin-bottom: 0.35em;
+
+		&[hidden] {
+			display: none !important;
+		}
+	}
+
+	&__upload-filename {
+		min-width: 0;
+		overflow-wrap: anywhere;
+	}
+
+	&__upload-choice input[type="file"] {
+		min-width: 0;
+		max-width: 100%;
+	}
+
+	&__control input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+	&__control select,
+	&__control textarea {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&__control select[multiple] {
+		min-height: 8em;
+	}
+
+	&__editor fieldset {
+		min-width: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+}

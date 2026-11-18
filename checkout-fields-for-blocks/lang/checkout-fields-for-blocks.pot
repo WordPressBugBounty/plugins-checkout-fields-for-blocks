@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Checkout Fields for Blocks 1.3.1\n"
+"Project-Id-Version: Checkout Fields for Blocks 1.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/checkout-fields-for-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-07T02:56:06+00:00\n"
+"POT-Creation-Date: 2026-11-18T12:44:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: checkout-fields-for-blocks\n"
@@ -36,6 +36,18 @@ msgstr ""
 msgid "https://www.wpdesk.net/sk/checkout-fields-for-blocks-author/"
 msgstr ""
 
+#: inc/Hookable/Display/OrderAdmin.php:193
+msgid "You are not allowed to upload files."
+msgstr ""
+
+#: inc/Hookable/Display/OrderAdminEditors.php:62
+msgid "Enabled"
+msgstr ""
+
+#: inc/Hookable/Display/OrderAdminEditors.php:79
+msgid "Select an option"
+msgstr ""
+
 #: inc/Hookable/Registrator/BlockCategories.php:39
 msgid "Checkout Block Fields"
 msgstr ""
@@ -48,8 +60,22 @@ msgstr ""
 msgid "The checkout field value has an invalid format."
 msgstr ""
 
+#: templates/order-admin-fields.php:15
 #: templates/order-meta-fields.php:14
 msgid "Additional Information"
+msgstr ""
+
+#: templates/order-admin-fields.php:17
+msgid "Edit"
+msgstr ""
+
+#: templates/order-admin-fields.php:17
+#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:108
+msgid "Cancel"
+msgstr ""
+
+#: templates/order-admin-fields.php:57
+msgid "Update the order to save these changes."
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-basic-requirements/src/Basic_Requirement_Checker.php:206
@@ -295,10 +321,6 @@ msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:99
 msgid "Kindly tell us the reason so we can improve"
-msgstr ""
-
-#: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:108
-msgid "Cancel"
 msgstr ""
 
 #: vendor_prefixed/wpdesk/wp-wpdesk-tracker/src/views/tracker-deactivate.php:111

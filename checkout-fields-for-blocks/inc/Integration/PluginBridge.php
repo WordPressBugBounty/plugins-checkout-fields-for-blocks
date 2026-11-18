@@ -58,6 +58,34 @@ class PluginBridge {
 		return $this->field_value_handler_registry;
 	}
 
+	/**
+	 * Register an optional admin editor for a field type.
+	 *
+	 * @param callable $editor Receives FieldSettings, the current order value, and optionally the WC_Order; returns editor HTML.
+	 */
+	public function register_admin_editor( string $field_type, callable $editor ): bool {
+		if ( ! $this->field_value_handler_registry || ! $this->field_value_handler_registry->has( $field_type ) ) {
+			return false;
+		}
+
+		$this->field_value_handler_registry->register_admin_editor( $field_type, $editor );
+		return true;
+	}
+
+	/**
+	 * Register an optional admin saver for a field type.
+	 *
+	 * @param callable $saver Receives FieldSettings, submitted value, uploaded file, and order; returns an error, after-save callback, or null.
+	 */
+	public function register_admin_saver( string $field_type, callable $saver ): bool {
+		if ( ! $this->field_value_handler_registry || ! $this->field_value_handler_registry->has( $field_type ) ) {
+			return false;
+		}
+
+		$this->field_value_handler_registry->register_admin_saver( $field_type, $saver );
+		return true;
+	}
+
 	public function get_editor_runtime_script_handle(): string {
 		return self::EDITOR_RUNTIME_SCRIPT_HANDLE;
 	}

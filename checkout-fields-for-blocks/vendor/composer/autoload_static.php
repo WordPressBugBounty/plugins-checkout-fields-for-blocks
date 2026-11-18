@@ -327,6 +327,7 @@ class ComposerStaticInitCBFields
         'WPDesk\\CBFields\\Exceptions\\FieldMetaException' => __DIR__ . '/../..' . '/inc/Exceptions/FieldMetaException.php',
         'WPDesk\\CBFields\\Hookable\\Display\\DisplayBase' => __DIR__ . '/../..' . '/inc/Hookable/Display/DisplayBase.php',
         'WPDesk\\CBFields\\Hookable\\Display\\OrderAdmin' => __DIR__ . '/../..' . '/inc/Hookable/Display/OrderAdmin.php',
+        'WPDesk\\CBFields\\Hookable\\Display\\OrderAdminEditors' => __DIR__ . '/../..' . '/inc/Hookable/Display/OrderAdminEditors.php',
         'WPDesk\\CBFields\\Hookable\\Display\\OrderConfirmation' => __DIR__ . '/../..' . '/inc/Hookable/Display/OrderConfirmation.php',
         'WPDesk\\CBFields\\Hookable\\Display\\OrderEmail' => __DIR__ . '/../..' . '/inc/Hookable/Display/OrderEmail.php',
         'WPDesk\\CBFields\\Hookable\\Display\\OrderMyAccount' => __DIR__ . '/../..' . '/inc/Hookable/Display/OrderMyAccount.php',

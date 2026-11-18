@@ -26,6 +26,16 @@ final class FieldValueHandlerRegistry {
 	 */
 	private array $block_types = [];
 
+	/**
+	 * @var array<string, callable>
+	 */
+	private array $admin_editors = [];
+
+	/**
+	 * @var array<string, callable>
+	 */
+	private array $admin_savers = [];
+
 	public function __construct( FieldValueHandler $fallback_handler, LoggerInterface $logger ) {
 		$this->fallback_handler = $fallback_handler;
 		$this->logger           = $logger;
@@ -58,6 +68,40 @@ final class FieldValueHandlerRegistry {
 		$this->block_types[ $block_name ] = $field_type;
 
 		return true;
+	}
+
+	public function register_admin_editor( string $field_type, callable $editor ): void {
+		$this->admin_editors[ $field_type ] = $editor;
+	}
+
+	public function has_admin_editor( string $field_type ): bool {
+		return isset( $this->admin_editors[ $field_type ] );
+	}
+
+	public function register_admin_saver( string $field_type, callable $saver ): void {
+		$this->admin_savers[ $field_type ] = $saver;
+	}
+
+	public function has_admin_saver( string $field_type ): bool {
+		return isset( $this->admin_savers[ $field_type ] );
+	}
+
+	/**
+	 * Return an admin-facing error, an after-save callback, or null when unchanged.
+	 *
+	 * @param mixed                     $value
+	 * @param array<string, mixed>|null $file
+	 * @return callable|string|null
+	 */
+	public function save_admin_value( string $field_type, FieldSettings $field_settings, $value, ?array $file, \WC_Order $order ) {
+		return call_user_func( $this->admin_savers[ $field_type ], $field_settings, $value, $file, $order );
+	}
+
+	/**
+	 * @param mixed $value
+	 */
+	public function render_admin_editor( string $field_type, FieldSettings $field_settings, $value, ?\WC_Order $order = null ): string {
+		return (string) call_user_func( $this->admin_editors[ $field_type ], $field_settings, $value, $order );
 	}
 
 	public function has( string $field_type ): bool {

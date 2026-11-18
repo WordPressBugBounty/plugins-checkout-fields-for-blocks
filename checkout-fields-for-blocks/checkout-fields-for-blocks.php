@@ -3,7 +3,7 @@
  * Plugin Name: Checkout Fields for Blocks
  * Plugin URI: https://www.wpdesk.net/sk/checkout-fields-for-blocks-plugin/
  * Description: Checkout Fields for Blocks
- * Version: 1.3.1
+ * Version: 1.4.0
  * Author: WP Desk
  * Author URI: https://www.wpdesk.net/sk/checkout-fields-for-blocks-author/
  * License: GPLv3 or later
@@ -37,7 +37,7 @@ use WPDesk\CBFields\Plugin;
 defined( 'ABSPATH' ) || exit;
 
 /* THESE TWO VARIABLES CAN BE CHANGED AUTOMATICALLY */
-$plugin_version = '1.3.1';
+$plugin_version = '1.4.0';
 
 $plugin_name        = 'Checkout Fields for Blocks';
 $plugin_class_name  = Plugin::class;
