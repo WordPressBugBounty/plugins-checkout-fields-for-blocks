@@ -3,9 +3,9 @@ Contributors: wpdesk, amisiewicz
 Donate link: https://www.wpdesk.net/sk/checkout-fields-for-blocks-donate/
 Tags: checkout plugin, checkout customization, form builder, checkout fields, checkout editor
 Requires at least: 6.0
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -211,6 +211,9 @@ Please report security bugs found in the source code of the Checkout Fields for 
 Upgrade to the latest version to get the newest features and all interface improvements.
 
 == Changelog ==
+
+= 1.4.1 - 2026-11-21 =
+* Added support for WordPress 7.2
 
 = 1.4.0 - 2026-11-18 =
 * Added editing of checkout field values on the order screen.
